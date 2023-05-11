@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>정류장 B</title>
+	<script>
+		function calculateTime() {
+			var busTimes = ["8:05", "8:25", "8:45", "9:00", "10:05", "10:25", "10:45", "11:20", "12:40", "13:05", "13:25", "13:45", "14:30", "15:05", "15:25", "15:45", "16:30", "17:00", "17:20", "17:40", "18:00", "18:20", "18:40"];
+			var now = new Date();
+			var hours = now.getHours();
+			var minutes = now.getMinutes();
+			var currentTime = hours + ":" + minutes;
+			var output = "";
+			for (var i = 0; i < busTimes.length; i++) {
+				var busTime = busTimes[i];
+				var busHours = parseInt(busTime.split(":")[0]);
+				var busMinutes = parseInt(busTime.split(":")[1]);
+				if (busHours < hours || (busHours == hours && busMinutes < minutes)) {
+					continue;
+				}
+				var minutesDiff = (busHours - hours) * 60 + (busMinutes - minutes);
+				output += "다음 버스(" + busTime + "): " + minutesDiff + "분 후 도착 예정<br>";
+				break;
+			}
+			if (output == "") {
+				output = "오늘의 버스 운행이 모두 종료되었습니다.";
+			}
+			document.getElementById("output").innerHTML = output;
+		}
+        setInterval(function() {
+			calculateTime();
+		}, 60000);
+	</script>
+</head>
+<body onload="calculateTime()">
+	<h1>정류장 B</h1>
+	<p id="output"></p>
+</body>
+</html>
