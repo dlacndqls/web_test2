@@ -1,66 +1,71 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>정류소 선택A</title>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-      /* 스크롤 영역 스타일 */
-      #menu-container {
-        height: 200px; /* 스크롤 가능한 높이 */
-        overflow-y: auto; /* 세로 스크롤 가능하도록 설정 */
-      }
-
-      /* 메뉴 스타일 */
-      .menu-item {
-        padding: 10px;
-        border-bottom: 1px solid #ccc;
-        cursor: pointer;
-      }
-
-      /* 선택된 메뉴 스타일 */
-      .active {
-        background-color: #f5f5f5;
-      }
+        body {
+            background-color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* A의 스타일 */
+        .header {
+            background-color: lightgreen;
+            color: #FFFFFF;
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            padding: 40px;
+            margin-bottom: 10px;
+        }
+        
+        /* 스크롤 가능한 목록 스타일 */
+        .list {
+            font-size: 24px;
+            padding: 20px;
+            max-height: 400px; /* 최대 높이 설정 */
+            overflow-y: scroll; /* 세로 스크롤 설정 */
+        }
+        
+        /* 목록 항목 스타일 */
+        .list-item {
+            cursor: pointer;
+        }
+        
+        /* 목록 항목 사이 선 스타일 */
+        .list-item:not(:last-child) {
+            border-bottom: 1px solid #CCCCCC;
+        }
     </style>
-  </head>
-  <body>
-    <nav>
-      <ul>
-        <li>
-          <a href="#">정류소 선택 A</a>
-        </li>
-      </ul>
-    </nav>
-    <div id="menu-container">
-    <div class="menu-item" onclick="location.href='정류소 상세 정보A.html';">
-    정류장 A
-      </div>
-      <div class="menu-item" onclick="location.href='#정류장2';">
-        정류장 2
-      </div>
-      <div class="menu-item" onclick="location.href='#정류장3';">
-        정류장 3
-      </div>
-      <div class="menu-item" onclick="location.href='#정류장4';">
-        정류장 4
-      </div>
-      <div class="menu-item" onclick="location.href='#정류장5';">
-        정류장 5
-      </div>
-      <div class="menu-item" onclick="location.href='#정류장6';">
-        정류장 6
-      </div>
-      <div class="menu-item" onclick="location.href='#정류장7';">
-        정류장 7
-      </div>
-      <div class="menu-item" onclick="location.href='#정류장8';">
-        정류장 8
-      </div>
-      <div class="menu-item" onclick="location.href='#정류장9';">
-        정류장 9
-      </div>
-      <div class="menu-item" onclick="location.href='#정류장10';">
-        정류장 10
-      </div>
+</head>
+<body>
+    <div class="header">
+     정류장 선택 노선 A <!-- A의 헤더 -->
     </div>
-  </body>
+    <div class="list">
+        <ul>
+            <li class="list-item" onclick="location.href='a.html'">정류장 1</li> <!-- 정류장 1 -->
+            <li class="list-item" onclick="location.href='a.html'">정류장 2</li> <!-- 정류장 2 -->
+            <li class="list-item" onclick="location.href='a.html'">정류장 3</li> <!-- 정류장 3 -->
+            <li class="list-item" onclick="location.href='a.html'">정류장 4</li> <!-- 정류장 4 -->
+            <li class="list-item" onclick="location.href='a.html'">정류장 5</li> <!-- 정류장 5 -->
+            <li class="list-item" onclick="location.href='a.html'">정류장 6</li> <!-- 정류장 6 -->
+            <li class="list-item" onclick="location.href='a.html'">정류장 7</li> <!-- 정류장 7 -->
+            <li class="list-item" onclick="location.href='a.html'">정류장 8</li> <!-- 정류장 8 -->
+            <li class="list-item" onclick="location.href='a.html'">정류장 9</li> <!-- 정류장 9 -->
+            <li class="list-item" onclick="location.href='a.html'">정류장 10</li> <!-- 정류장 10 -->
+            <li class="list-item" onclick="location.href='a.html'">정류장 11</li> <!-- 정류장 11 -->
+            <li class="list-item" onclick="location.href='a.html'">정류장 12</li> <!-- 정류장 12 -->
+            <li class="list-item" onclick="location.href='a.html'">정류장 13</li> <!-- 정류장 13 -->
+            <li class="list-item" onclick="location.href='a.html'">정류장 14</li> <!-- 정류장 14 -->
+            <li class="list-item" onclick="location.href='a.html'">정류장 15</li> <!-- 정류장 15 -->
+            <li class="list-item" onclick="location.href='a.html'">정류장 16</li> <!-- 정류장 16 -->
+            <li class="list-item" onclick="location.href='a.html'">정류장 17</li> <!-- 정류장 17 -->
+            <li class="list-item" onclick="location.href='a.html'">정류장 18</li> <!-- 정류장 18 -->
+            <li class="list-item" onclick="location.href='a.html'">정류장 19</li> <!-- 정류장 19 -->
+            <li class="list-item" onclick="location.href='a.html'">정류장 20</li> <!-- 정류장 20 -->
+        </ul>
+    </div>
+</body>
 </html>
