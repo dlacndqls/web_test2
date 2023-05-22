@@ -1,141 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>버스 웹 메인 화면</title>
-    <style>
-        /* 공통 스타일링 */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-        }
-        
-        h1 {
-            margin: 0;
-        }
-        
-        nav {
-            background-color: #f2f2f2;
-            padding: 40px;
-            text-align: center;
-        }
-        
-        nav ul {
-            list-style-type: none;
-            margin:90;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        nav ul li {
-            margin-bottom: 10px;
-        }
-        
-        nav ul li a {
-            display: inline-block;
-            padding: 20px;
-            border-radius: 20px;
-            background-color: #333;
-            color: #fff;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-        
-        /* 첫 번째 버튼 크기 변경 */
-        nav ul li a:first-child {
-            padding: 40px;
-        }
-        
-        /* 두 번째와 세 번째 버튼 크기 변경 */
-        nav ul li a:nth-child(1),
-        nav ul li a:nth-child(3) {
-            padding: 10px;
-        }
-        
-        nav ul li a:hover {
-            background-color: #555;
-        }
-        
-        section {
-            padding: 20px;
-            text-align: center;
-        }
-        
-        footer {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-        }
-        
-        /* 모바일 스타일링 */
-        @media (max-width: 2001px) {
-            header {
-                padding: 20px;
-            }
-            
-            /* 모바일에서는 버튼을 세로로 배치하기 위해 display 속성 변경 */
-            nav ul li {
-                display: block;
-                margin-bottom: 10px;
-            }
-            
-            /* 버튼 높이 조정 */
-            nav ul li a {
-                padding: 30px;
-            }
-            
-            /* 위에 2개 버튼 크게, 아래 2개 버튼 작게 */
-            nav ul li a:nth-child(1),
-            nav ul li a:nth-child(2) {
-                padding: 30px;
-            }
-            
-            /* "환영합니다!" 부분 제거 */
-            section h2,
-            section p {
-                display: none;
-            }
-            
-            /* 버튼 간격 조정 */
-            nav ul li:not(:first-child) {
-                margin-top: 20px;
-            }
-        }
-    </style>
+  <title>버스 모바일 웹</title>
+  <style>
+    body {
+      background-color:white;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .header {
+      background-color: #333;
+      padding: 10px;
+      text-align: center;
+    }
+    
+    .footer {
+      background-color: #333;
+      padding: 10px;
+      text-align: center;
+    }
+    
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    
+    .button {
+      display: inline-block;
+      margin: 10px;
+      padding: 40px;
+      font-size: 36px;
+      color: #fff;
+      background-color: #555;
+      border: none;
+      border-radius: 50px;
+    }
+    
+    .big-button {
+      font-size: 48px;
+      padding: 60px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>교내 버스 정보</h1>
-    </header>
+  <div class="header">
+    <h1>버스 모바일 전용 웹</h1>
+  </div>
+  
+  <div class="content">
+    <div class="button-container">
+      <a href="시간표 보기.html"><button class="button big-button">정류장 선택 노선A</button></a>
+     <a href="노선보기.html"> <button class="button big-button">정류장 선택 노선A</button></a>
+      <br>
     
-    <nav>
-        <ul>
-            <!-- 홈 버튼, href 속성에 "a.html"로 클릭 시 이동할 페이지 지정 -->
-            <li><a href="a.html">정류장 선택 노선A</a></li>
-            <li><a href="a.html">정류장 선택 노선A</a></li>
-            <li><a href="a.html">시간표 보기</a></li>
-            <li><a href="a.html">노선 보기</a></li>
-        </ul>
-    </nav>
-    
-    
-    
-    <footer>
-        <p>&copy; 2023 교내 버스 정보</p>
-    </footer>
+      <a href="a.html"><button class="button">노선 보기</button></a>
+     <a href="a.html"> <button class="button">시간표 보기</button></a>
+ 
+  </div>
+    </div>
+
+  <div class="footer">
+    <p>© 2023 버스 모바일 웹</p>
+  </div>
 </body>
 </html>
