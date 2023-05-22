@@ -4,61 +4,70 @@
   <title>버스 모바일 웹</title>
   <style>
     body {
-      background-color:white;
+      background-color: whitesmoke;
       color: #fff;
       font-family: Arial, sans-serif;
-      margin: 0;
+      margin: 50;
       padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
     
     .header {
       background-color: #333;
-      padding: 10px;
+      padding: 20px;
       text-align: center;
+      font-size: 48px;
     }
     
     .footer {
       background-color: #333;
-      padding: 10px;
+      padding: 20px;
       text-align: center;
+      font-size: 24px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
     }
     
     .button-container {
+      flex-grow: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin-top: 30px;
+      margin-top: 50px;
     }
     
     .button {
       display: inline-block;
-      margin: 10px;
-      padding: 40px;
-      font-size: 36px;
+      margin: 50px;
+      padding: 80px;
+      font-size: 60px;
       color: #fff;
       background-color: #555;
       border: none;
-      border-radius: 50px;
+      border-radius: 80px;
     }
     
     .big-button {
-      font-size: 48px;
-      padding: 60px;
+      font-size: 73px;
+      padding: 120px;
     }
   </style>
 </head>
 <body>
   <div class="header">
-    <h1>버스 모바일 전용 웹</h1>
+    <h1>제주대 교내버스 </h1>
   </div>
   
   <div class="content">
     <div class="button-container">
-      <a href="시간표 보기.html"><button class="button big-button">정류장 선택 노선A</button></a>
-     <a href="노선보기.html"> <button class="button big-button">정류장 선택 노선A</button></a>
+      <a href="시간표 보기.html"><button class="button big-button">정류장 수정 노선A</button></a>
+     <a href="노선보기.html"> <button class="button big-button">정류장 선택 노선B</button></a>
       <br>
-    
+    <br>
       <a href="a.html"><button class="button">노선 보기</button></a>
      <a href="a.html"> <button class="button">시간표 보기</button></a>
  
