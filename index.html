@@ -28,10 +28,10 @@ function changeBackgroundColor() {
   // 배경색 변경
   body.style.backgroundColor = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
   
-  // 각 색상값 연하게 조절 (0.6초마다)
-  redValue = Math.max(0, redValue );
-  greenValue = Math.max(0, greenValue );
-  blueValue = Math.min(255, blueValue );
+  // 각 색상값 연하게 조절 (0.5초마다)
+  redValue = Math.max(0, redValue - 1);
+  greenValue = Math.max(0, greenValue - 1);
+  blueValue = Math.min(255, blueValue + 1);
 }
 
 function startBackgroundColorCycle() {
@@ -39,7 +39,7 @@ function startBackgroundColorCycle() {
   clearInterval(intervalId);
   
   // 0.5초마다 changeBackgroundColor 함수 호출
-  intervalId = setInterval(changeBackgroundColor, 600);
+  intervalId = setInterval(changeBackgroundColor, 500);
 }
 
 // 카운트 다운 함수
