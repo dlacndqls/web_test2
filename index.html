@@ -2,25 +2,26 @@
 <html>
 <head>
 <style>
-  #color-box {
-    width: 100px;
-    height: 100px;
-    background-color: blue;
+  body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: blue; /* 초기 배경색 설정 */
   }
 </style>
 </head>
 <body>
 
-<div id="color-box"></div>
-
 <script>
 var intervalId;
 
-function changeColor() {
-  var colorBox = document.getElementById("color-box");
+function changeBackgroundColor() {
+  var body = document.body;
   
   // 현재 배경색 확인
-  var currentColor = colorBox.style.backgroundColor;
+  var currentColor = body.style.backgroundColor;
   
   // 다음 색상 계산
   var nextColor;
@@ -39,26 +40,26 @@ function changeColor() {
   }
   
   // 배경색 변경
-  colorBox.style.backgroundColor = nextColor;
+  body.style.backgroundColor = nextColor;
 }
 
-function startColorCycle() {
+function startBackgroundColorCycle() {
   // 이전 interval 제거
   clearInterval(intervalId);
   
-  // 1초마다 changeColor 함수 호출
-  intervalId = setInterval(changeColor, 1000);
+  // 1초마다 changeBackgroundColor 함수 호출
+  intervalId = setInterval(changeBackgroundColor, 1000);
 }
 
-// 페이지 로드 시 색상 순환 시작
-startColorCycle();
+// 페이지 로드 시 배경색 순환 시작
+startBackgroundColorCycle();
 
 // 화면 클릭 시 초기화
 document.body.addEventListener("click", function() {
   clearInterval(intervalId);
-  var colorBox = document.getElementById("color-box");
-  colorBox.style.backgroundColor = "blue"; // 초기 색상로 복구
-  startColorCycle(); // 다시 색상 순환 시작
+  var body = document.body;
+  body.style.backgroundColor = "blue"; // 초기 배경색로 복구
+  startBackgroundColorCycle(); // 다시 배경색 순환 시작
 });
 </script>
 
