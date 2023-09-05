@@ -8,58 +8,70 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: blue; /* 초기 배경색 설정 */
+    background-color: rgb(0, 0, 255); /* 초기 배경색 설정 (파란색) */
   }
 </style>
 </head>
 <body>
 
+<div id="countdown">10</div>
+
 <script>
 var intervalId;
+var redValue = 0;
+var greenValue = 0;
+var blueValue = 255;
 
 function changeBackgroundColor() {
   var body = document.body;
   
-  // 현재 배경색 확인
-  var currentColor = body.style.backgroundColor;
-  
-  // 다음 색상 계산
-  var nextColor;
-  switch (currentColor) {
-    case "blue":
-      nextColor = "red";
-      break;
-    case "red":
-      nextColor = "yellow";
-      break;
-    case "yellow":
-      nextColor = "blue";
-      break;
-    default:
-      nextColor = "blue";
-  }
-  
   // 배경색 변경
-  body.style.backgroundColor = nextColor;
+  body.style.backgroundColor = `rgb(${redValue}, ${greenValue}, ${blueValue})`;
+  
+  // 각 색상값 연하게 조절 (0.6초마다)
+  redValue = Math.max(0, redValue );
+  greenValue = Math.max(0, greenValue );
+  blueValue = Math.min(255, blueValue );
 }
 
 function startBackgroundColorCycle() {
   // 이전 interval 제거
   clearInterval(intervalId);
   
-  // 0.333333초마다 changeBackgroundColor 함수 호출
-  intervalId = setInterval(changeBackgroundColor, 500);
+  // 0.5초마다 changeBackgroundColor 함수 호출
+  intervalId = setInterval(changeBackgroundColor, 600);
 }
 
-// 페이지 로드 시 배경색 순환 시작
-startBackgroundColorCycle();
+// 카운트 다운 함수
+function countdown() {
+  var countdownElement = document.getElementById("countdown");
+  var count = parseInt(countdownElement.innerText);
+  
+  if (count > 0) {
+    count--;
+    countdownElement.innerText = count;
+    setTimeout(countdown, 1000); // 1초마다 다시 호출
+  } else {
+    // 카운트가 0이 되면 배경색 순환 시작
+    countdownElement.style.display = "none"; // 카운트 다운 숨김
+    startBackgroundColorCycle(); // 배경색 순환 시작
+  }
+}
+
+// 페이지 로드 시 카운트 다운 시작
+countdown();
 
 // 화면 클릭 시 초기화
 document.body.addEventListener("click", function() {
   clearInterval(intervalId);
   var body = document.body;
-  body.style.backgroundColor = "blue"; // 초기 배경색로 복구
-  startBackgroundColorCycle(); // 다시 배경색 순환 시작
+  redValue = 0;
+  greenValue = 0;
+  blueValue = 255;
+  body.style.backgroundColor = "rgb(0, 0, 255)"; // 초기 배경색로 복구
+  document.getElementById("countdown").innerText = "10"; // 카운트 다운 리셋
+  document.getElementById("countdown").style.display = "block"; // 카운트 다운 표시
+  countdown(); // 카운트 다운 다시 시작
 });
 </script>
 
