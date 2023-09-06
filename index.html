@@ -29,19 +29,17 @@
 </head>
 <body>
     <script>
-        function startCountdown() {
+        function changeColor() {
             const colors = ['blue', 'red', 'yellow'];
             let currentColorIndex = 0;
-            
-            function changeColor() {
+
+            setInterval(() => {
                 document.body.className = colors[currentColorIndex];
                 currentColorIndex = (currentColorIndex + 1) % colors.length;
-            }
-            
-            setInterval(changeColor, 500);
+            }, 500);
         }
 
-        setTimeout(startCountdown, 10000);
+        changeColor(); // 페이지 로드 후 바로 색 전환 시작
     </script>
 </body>
 </html>
