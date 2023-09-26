@@ -1,67 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-  body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: blue; /* 초기 배경색 설정 */
-  }
-</style>
+    <title>MySQL 연결 확인</title>
 </head>
 <body>
+    <h1>MySQL 연결 확인</h1>
+	
+    <?php
+	extension_loaded('mysqli');
+	echo "dd";
+    $conn = mysqli_connect("3.38.245.93", "root", "1234", "testdb");
+	$sql ="select * from testtable";
+    $result =mysqli_query($conn,$sql);
+	
+	while($row = mysqli_fetch_array($result)){
+		echo"<li>{$row['id']}-{$row['title']}</li>";
+	}
+    
 
-<script>
-var intervalId;
-
-function changeBackgroundColor() {
-  var body = document.body;
-  
-  // 현재 배경색 확인
-  var currentColor = body.style.backgroundColor;
-  
-  // 다음 색상 계산
-  var nextColor;
-  switch (currentColor) {
-    case "blue":
-      nextColor = "red";
-      break;
-    case "red":
-      nextColor = "yellow";
-      break;
-    case "yellow":
-      nextColor = "blue";
-      break;
-    default:
-      nextColor = "blue";
-  }
-  
-  // 배경색 변경
-  body.style.backgroundColor = nextColor;
-}
-
-function startBackgroundColorCycle() {
-  // 이전 interval 제거
-  clearInterval(intervalId);
-  
-  // 0.333333초마다 changeBackgroundColor 함수 호출
-  intervalId = setInterval(changeBackgroundColor, 510);
-}
-
-// 페이지 로드 시 배경색 순환 시작
-startBackgroundColorCycle();
-
-// 화면 클릭 시 초기화
-document.body.addEventListener("click", function() {
-  clearInterval(intervalId);
-  var body = document.body;
-  body.style.backgroundColor = "blue"; // 초기 배경색로 복구
-  startBackgroundColorCycle(); // 다시 배경색 순환 시작
-});
-</script>
-
+    ?>
 </body>
 </html>
